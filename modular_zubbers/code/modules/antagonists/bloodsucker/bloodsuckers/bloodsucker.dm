@@ -3,10 +3,9 @@
 	show_in_antagpanel = TRUE
 	roundend_category = "bloodsuckers"
 	antagpanel_category = "Bloodsucker"
-	job_rank = ROLE_BLOODSUCKER
+	pref_flag = ROLE_BLOODSUCKER
 	antag_hud_name = "bloodsucker"
 	show_name_in_check_antagonists = TRUE
-	can_coexist_with_others = FALSE
 	hijack_speed = 0.5
 	hud_icon = 'modular_zubbers/icons/mob/huds/bloodsucker.dmi'
 	ui_name = "AntagInfoBloodsucker"
@@ -337,10 +336,12 @@
 
 /datum/antagonist/bloodsucker/get_preview_icon()
 
-	var/icon/final_icon = render_preview_outfit(/datum/outfit/bloodsucker_outfit)
-	final_icon.Blend(icon('icons/effects/blood.dmi', "uniformblood"), ICON_OVERLAY)
+	var/icon/outfit_icon = render_preview_outfit(preview_outfit)
+	var/icon/blood_icon = icon('icons/effects/blood.dmi', "uniformblood")
+	blood_icon.Blend(BLOOD_COLOR_RED, ICON_MULTIPLY)
+	outfit_icon.Blend(blood_icon, ICON_OVERLAY)
 
-	return finish_preview_icon(final_icon)
+	return finish_preview_icon(outfit_icon)
 
 /datum/antagonist/bloodsucker/ui_static_data(mob/user)
 	var/list/data = ability_ui_data(powers)

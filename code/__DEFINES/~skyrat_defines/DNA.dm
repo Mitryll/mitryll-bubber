@@ -7,12 +7,14 @@
 #define USE_ONE_COLOR		31
 #define USE_MATRIXED_COLORS	32
 
-//Defines for processing reagents, for synths, IPC's and Vox
-#define PROCESS_ORGANIC 1		//Only processes reagents with "ORGANIC" or "ORGANIC | SYNTHETIC"
-#define PROCESS_SYNTHETIC 2		//Only processes reagents with "SYNTHETIC" or "ORGANIC | SYNTHETIC"
+//Defines for processing reagents, for synths, IPC's, Protean's and Vox
+#define PROCESS_ORGANIC 1		//Only processes reagents with "ORGANIC" or "ORGANIC | SYNTHETIC" or "ORGANIC | PROTEAN" or "ORGANIC | SYNTHETIC | PROTEAN"
+#define PROCESS_SYNTHETIC 2		//Only processes reagents with "SYNTHETIC" or "ORGANIC | SYNTHETIC" or "SYNTHETIC | PROTEAN" or "ORGANIC | SYNTHETIC | PROTEAN"
+#define PROCESS_PROTEAN 3		//Only processes reagents with "PROTEAN" or "ORGANIC | PROTEAN" or "ORGANIC | SYNTHETIC | PROTEAN"
 
 #define REAGENT_ORGANIC 1
 #define REAGENT_SYNTHETIC 2
+#define REAGENT_PROTEAN 3
 
 //Some defines for sprite accessories
 // Which color source we're using when the accessory is added
@@ -69,10 +71,10 @@
 
 //In inches
 #define PENIS_MIN_GIRTH PENIS_MIN_LENGTH
-#define PENIS_MAX_GIRTH 20
+#define PENIS_MAX_GIRTH 40
 #define PENIS_DEFAULT_GIRTH 5 // a lil big but not by much
 #define PENIS_MIN_LENGTH 1
-#define PENIS_MAX_LENGTH 36
+#define PENIS_MAX_LENGTH 72
 #define PENIS_DEFAULT_LENGTH 6 //still a lil long but not insane
 
 #define TESTICLES_MIN_SIZE 0
@@ -98,7 +100,7 @@
 	"penis_sheath" = SHEATH_NONE,\
 	"balls_size" = 1,\
 	"body_size" = BODY_SIZE_NORMAL,\
-	"custom_species" = null,\
+	"custom_species" = "",\
 	"penis_uses_skintones" = TRUE,\
 	"penis_uses_skincolor" = TRUE,\
 	"testicles_uses_skintones" = TRUE,\

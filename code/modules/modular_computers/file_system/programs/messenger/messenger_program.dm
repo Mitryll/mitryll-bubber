@@ -645,7 +645,7 @@
 	// Log in the talk log
 	source.log_talk(message, subtle ? LOG_SUBTLER : LOG_PDA, tag="[shell_addendum][rigged ? "Rigged" : ""] PDA: [computer.saved_identification] to [signal.format_target()]") // BUBBER EDIT CHANGE - SUBTLE MESSAGES - Original: source.log_talk(message, LOG_PDA, tag="[shell_addendum][rigged ? "Rigged" : ""] PDA: [computer.saved_identification] to [signal.format_target()]")
 	if(rigged)
-		log_bomber(sender, "sent a rigged PDA message (Name: [fake_name]. Job: [fake_job]) to [english_list(stringified_targets)] [!is_special_character(sender) ? "(SENT BY NON-ANTAG)" : ""]")
+		log_bomber(sender, "sent a rigged PDA message (Name: [fake_name]. Job: [fake_job]) to [english_list(stringified_targets)] [sender.is_antag() ? "" : "(SENT BY NON-ANTAG)"]")
 
 	/** BUBBER EDIT CHANGE BEGIN - SUBTLE MESSAGES - Original:
 	 *  var/ghost_message = span_game_say("[span_name(signal.format_sender())] [rigged ? "(as [span_name(fake_name)]) Rigged " : ""]PDA Message --> [span_name("[signal.format_target()]")]: \"[signal.format_message()]\"")
@@ -716,6 +716,14 @@
 		receievers += computer.inserted_pai.pai
 	if(computer.loc && isliving(computer.loc))
 		receievers += computer.loc
+
+	/// BUBBER EDIT BEGINS - Synths get notified if their brain PDA is messaged
+	if(istype(computer, /obj/item/modular_computer/pda/synth))
+		var/obj/item/organ/brain/synth/brain_loc = computer.loc
+		var/mob/living/carbon/owner = brain_loc?.bodypart_owner?.owner
+		if(istype(owner))
+			receievers += owner
+	/// BUBBER EDIT ENDS
 
 	// resolving w/o nullcheck here, assume the messenger exists if a real person sent a message
 	var/datum/computer_file/program/messenger/sender_messenger = chat.recipient?.resolve()

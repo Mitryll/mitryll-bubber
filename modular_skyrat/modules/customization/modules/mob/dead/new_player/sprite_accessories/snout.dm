@@ -196,6 +196,10 @@
 	name = "Otie Smile"
 	icon_state = "otiesmile"
 
+/datum/sprite_accessory/snouts/mammal/otter
+	name = "Otter"
+	icon_state = "otter"
+
 /*/datum/sprite_accessory/snouts/mammal/round
 	name = "Mammal Round"
 	icon_state = "round"
@@ -461,8 +465,21 @@
 	name = "Acrador 4 (Normal)"
 	icon_state = "acrador_4"
 
+//you know it just matters if the display name is different. I CBA risking breaking save slots.
 /datum/sprite_accessory/snouts/renamon
 	icon = 'modular_skyrat/master_files/icons/mob/sprite_accessory/snouts.dmi'
 	color_src = USE_MATRIXED_COLORS
-	name = "Renamon"
+	name = "Cyvian"
 	icon_state = "renamon"
+
+/datum/sprite_accessory/snouts/exsharp
+	icon = 'modular_skyrat/master_files/icons/mob/sprite_accessory/snouts.dmi'
+	color_src = USE_MATRIXED_COLORS
+	name = "Extra Sharp"
+	icon_state = "exsharp"
+
+/datum/sprite_accessory/snouts/mammal/masked_wing
+	name = "Masked Wing"
+	icon_state = "masked" // By @Sweettoothart
+	color_src = USE_ONE_COLOR
+	organ_type = /obj/item/organ/snout/top_adj

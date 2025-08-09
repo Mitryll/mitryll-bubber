@@ -164,3 +164,76 @@
 	default_color = "#FFFFFF"
 	affected_bodyparts = HEAD
 	gendered = FALSE
+
+/datum/body_marking/bubber/splotches //Sprites by Avimour
+	name = "Splotches"
+	icon_state = "splotches"
+	affected_bodyparts = HEAD | CHEST | ARM_LEFT | ARM_RIGHT | HAND_LEFT | HAND_RIGHT | LEG_RIGHT | LEG_LEFT
+
+/datum/body_marking/bubber/splotcheswap
+	name = "Splotches Swapped"
+	icon_state = "splotcheswap"
+	affected_bodyparts = HEAD
+
+/datum/body_marking/bubber/chitin //End of sprites by Avimour
+	name = "Chitin"
+	icon_state = "chitin"
+	affected_bodyparts = CHEST | ARM_LEFT | ARM_RIGHT | HAND_LEFT | HAND_RIGHT | LEG_RIGHT | LEG_LEFT
+
+/datum/body_marking/bubber/dome //Sprites by thgvr
+	icon_state = "dome"
+	name = "Dome"
+	default_color = "#FFFFFF"
+	affected_bodyparts = HEAD
+
+/datum/body_marking/bubber/topscars_1
+	icon_state = "topscars_1"
+	name = "Top Scar Variant 1"
+	affected_bodyparts = CHEST
+	default_color = "#FFFFFF"
+	gendered = FALSE
+
+/datum/body_marking/bubber/topscars_2
+	icon_state = "topscars_2"
+	name = "Top Scar Variant 2"
+	affected_bodyparts = CHEST
+	default_color = "#FFFFFF"
+	gendered = FALSE
+
+/datum/body_marking/bubber/talleyes
+	icon_state = "talleyes"
+	name = "Tall Eyes"
+	default_color = "#FFFFFF"
+	affected_bodyparts = HEAD
+
+/datum/body_marking/bubber/wideeyes
+	icon_state = "wideeyes"
+	name = "Wide Eyes"
+	default_color = "#FFFFFF"
+	affected_bodyparts = HEAD
+
+/datum/body_marking/bubber/angledeyes
+	icon_state = "angledeyes"
+	name = "Angled Eyes"
+	default_color = "#FFFFFF"
+	affected_bodyparts = HEAD
+
+/datum/body_marking/bubber/protogenlegs // Sprites by CandleJaxx on NovaSector
+	name = "Protogen Leg - Digitigrade"
+	icon_state = "protogen"
+	affected_bodyparts = LEG_RIGHT | LEG_LEFT
+
+/datum/body_marking/bubber/protogenarms
+	name = "Protogen Arm"
+	icon_state = "protogen"
+	affected_bodyparts = ARM_RIGHT | ARM_LEFT
+
+/datum/body_marking/bubber/protogenchest
+	name = "Protogen Chest"
+	icon_state = "protogen"
+	affected_bodyparts = CHEST
+
+/datum/body_marking/bubber/protogencrotch // Sprite by xPokee
+	name = "Protogen Crotch Plate"
+	icon_state = "protogen_c"
+	affected_bodyparts = CHEST

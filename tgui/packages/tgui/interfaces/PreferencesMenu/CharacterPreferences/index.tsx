@@ -7,7 +7,7 @@ import { SideDropdown } from '../../../bubber_components/SideDropdown'; // BUBBE
 import { PageButton } from '../components/PageButton';
 import { LanguagesPage } from '../LanguagesMenu'; // BUBBER EDIT ADDITION
 import { LimbsPage } from '../LimbsPage'; // BUBBER EDIT ADDITION
-import { PreferencesMenuData } from '../types';
+import type { PreferencesMenuData } from '../types';
 import { AntagsPage } from './AntagsPage';
 import { JobsPage } from './JobsPage';
 import { LoadoutPage } from './loadout';
@@ -59,7 +59,6 @@ function CharacterProfiles(props: ProfileProps) {
     <Stack align="center" justify="left">
       <Stack.Item width="285px">
         <SideDropdown
-          width="100%"
           selected={profiles[activeSlot]}
           options={profiles.map((profile, slot) => ({
             value: slot,
@@ -233,7 +232,7 @@ export function CharacterPreferenceWindow(props) {
         </Stack>
       </Stack.Item>
       <Stack.Divider />
-      <Stack.Item grow position="relative" overflow="hidden auto">
+      <Stack.Item grow position="relative" overflowX="hidden" overflowY="auto">
         {pageContents}
       </Stack.Item>
     </Stack>

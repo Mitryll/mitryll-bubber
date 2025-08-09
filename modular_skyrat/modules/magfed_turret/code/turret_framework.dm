@@ -25,17 +25,6 @@
 #define TURRET_THREAT_SEVERE 8
 #define TURRET_THREAT_PRIORITY 10
 
-DEFINE_BITFIELD(turret_flags, list(
-	"TURRET_FLAG_SHOOT_ALL_REACT" = TURRET_FLAG_SHOOT_ALL_REACT,
-	"TURRET_FLAG_AUTH_WEAPONS" = TURRET_FLAG_AUTH_WEAPONS,
-	"TURRET_FLAG_SHOOT_CRIMINALS" = TURRET_FLAG_SHOOT_CRIMINALS,
-	"TURRET_FLAG_SHOOT_ALL" = TURRET_FLAG_SHOOT_ALL,
-	"TURRET_FLAG_SHOOT_ANOMALOUS" = TURRET_FLAG_SHOOT_ANOMALOUS,
-	"TURRET_FLAG_SHOOT_UNSHIELDED" = TURRET_FLAG_SHOOT_UNSHIELDED,
-	"TURRET_FLAG_SHOOT_BORGS" = TURRET_FLAG_SHOOT_BORGS,
-	"TURRET_FLAG_SHOOT_HEADS" = TURRET_FLAG_SHOOT_HEADS,
-))
-
 ////// Toolbox Handling //////
 /obj/item/storage/toolbox/emergency/turret/mag_fed
 	name = "mag-fed turret kit"
@@ -805,7 +794,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	our_projectile.stamina *= turret_damage_multiplier
 
 	our_projectile.wound_bonus += turret_wound_bonus
-	our_projectile.bare_wound_bonus += turret_wound_bonus
+	our_projectile.exposed_wound_bonus += turret_wound_bonus
 	casing.fire_casing(target, src, null, null, null, BODY_ZONE_CHEST, 0, src)
 	play_fire_sound(casing)
 

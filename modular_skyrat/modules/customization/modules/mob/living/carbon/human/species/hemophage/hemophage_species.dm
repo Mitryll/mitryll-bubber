@@ -10,7 +10,6 @@
 		TRAIT_CAN_STRIP,
 		TRAIT_NOHUNGER,
 		TRAIT_NOBREATH,
-		TRAIT_OXYIMMUNE,
 		TRAIT_VIRUSIMMUNE,
 		TRAIT_LITERATE,
 		TRAIT_DRINKS_BLOOD,
@@ -177,3 +176,6 @@
 
 
 #undef HEMOPHAGE_SPAWN_TEXT
+
+/mob/living/carbon/human/species/hemophage //Why was this never added?
+	race = /datum/species/hemophage

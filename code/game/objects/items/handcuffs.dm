@@ -158,6 +158,7 @@
 		cuffs = new type()
 
 	target.equip_to_slot(cuffs, ITEM_SLOT_HANDCUFFED)
+	SEND_SIGNAL(target, COMSIG_MOB_HANDCUFFED) //BUBBER EDIT ADDITION
 
 	if(trashtype && !dispense)
 		qdel(src)
@@ -261,6 +262,7 @@
 	cable_color = null
 	custom_materials = null
 	color = null
+	resistance_flags = FIRE_PROOF | LAVA_PROOF
 
 /**
  * Red cable restraints
@@ -548,7 +550,7 @@
 	///Reference of the mob we will attempt to snare
 	var/datum/weakref/ensnare_mob_ref
 
-/obj/item/restraints/legcuffs/bola/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, gentle = FALSE, quickstart = TRUE)
+/obj/item/restraints/legcuffs/bola/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, gentle = FALSE, quickstart = TRUE, throw_type_path = /datum/thrownthing)
 	if(!..())
 		return
 	playsound(src.loc,'sound/items/weapons/bolathrow.ogg', 75, TRUE)

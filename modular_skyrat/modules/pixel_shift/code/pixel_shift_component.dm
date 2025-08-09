@@ -29,23 +29,23 @@
 		return COMPONENT_INCOMPATIBLE
 
 /datum/component/pixel_shift/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_KB_MOB_ITEM_PIXEL_SHIFT_DOWN, PROC_REF(item_pixel_shift_down))
-	RegisterSignal(parent, COMSIG_KB_MOB_ITEM_PIXEL_SHIFT_UP, PROC_REF(item_pixel_shift_up))
-	RegisterSignal(parent, COMSIG_KB_MOB_PIXEL_SHIFT_DOWN, PROC_REF(pixel_shift_down))
-	RegisterSignal(parent, COMSIG_KB_MOB_PIXEL_SHIFT_UP, PROC_REF(pixel_shift_up))
-	RegisterSignal(parent, COMSIG_KB_MOB_PIXEL_TILT_DOWN, PROC_REF(pixel_tilt_down))
-	RegisterSignal(parent, COMSIG_KB_MOB_PIXEL_TILT_UP, PROC_REF(pixel_tilt_up))
+	RegisterSignal(parent, COMSIG_KB_LIVING_ITEM_PIXEL_SHIFT_DOWN, PROC_REF(item_pixel_shift_down))
+	RegisterSignal(parent, COMSIG_KB_LIVING_ITEM_PIXEL_SHIFT_UP, PROC_REF(item_pixel_shift_up))
+	RegisterSignal(parent, COMSIG_KB_LIVING_PIXEL_SHIFT_DOWN, PROC_REF(pixel_shift_down))
+	RegisterSignal(parent, COMSIG_KB_LIVING_PIXEL_SHIFT_UP, PROC_REF(pixel_shift_up))
+	RegisterSignal(parent, COMSIG_KB_LIVING_PIXEL_TILT_DOWN, PROC_REF(pixel_tilt_down))
+	RegisterSignal(parent, COMSIG_KB_LIVING_PIXEL_TILT_UP, PROC_REF(pixel_tilt_up))
 	RegisterSignals(parent, list(COMSIG_LIVING_RESET_PULL_OFFSETS, COMSIG_LIVING_SET_PULL_OFFSET, COMSIG_MOVABLE_MOVED), PROC_REF(unpixel_shift))
 	RegisterSignal(parent, COMSIG_MOB_CLIENT_PRE_LIVING_MOVE, PROC_REF(pre_move_check))
 	RegisterSignal(parent, COMSIG_LIVING_CAN_ALLOW_THROUGH, PROC_REF(check_passable))
 /datum/component/pixel_shift/UnregisterFromParent()
 	UnregisterSignal(parent, list(
-		COMSIG_KB_MOB_ITEM_PIXEL_SHIFT_DOWN,
-		COMSIG_KB_MOB_ITEM_PIXEL_SHIFT_UP,
-		COMSIG_KB_MOB_PIXEL_TILT_DOWN,
-		COMSIG_KB_MOB_PIXEL_TILT_UP,
-		COMSIG_KB_MOB_PIXEL_SHIFT_DOWN,
-		COMSIG_KB_MOB_PIXEL_SHIFT_UP,
+		COMSIG_KB_LIVING_ITEM_PIXEL_SHIFT_DOWN,
+		COMSIG_KB_LIVING_ITEM_PIXEL_SHIFT_UP,
+		COMSIG_KB_LIVING_PIXEL_TILT_DOWN,
+		COMSIG_KB_LIVING_PIXEL_TILT_UP,
+		COMSIG_KB_LIVING_PIXEL_SHIFT_DOWN,
+		COMSIG_KB_LIVING_PIXEL_SHIFT_UP,
 		COMSIG_MOB_CLIENT_PRE_LIVING_MOVE,
 		COMSIG_LIVING_RESET_PULL_OFFSETS,
 		COMSIG_LIVING_SET_PULL_OFFSET,
@@ -137,22 +137,22 @@
 		if(SHIFTING_PARENT)
 			switch(direct)
 				if(NORTH)
-					if(shift_y <= maximum_pixel_shift + owner.base_pixel_y)
+					if(shift_y <= maximum_pixel_shift)
 						shift_y++
 						owner.add_offsets(type, y_add = shift_y)
 						is_shifted = TRUE
 				if(EAST)
-					if(shift_x <= maximum_pixel_shift + owner.base_pixel_x)
+					if(shift_x <= maximum_pixel_shift)
 						shift_x++
 						owner.add_offsets(type, x_add = shift_x)
 						is_shifted = TRUE
 				if(SOUTH)
-					if(shift_y >= -maximum_pixel_shift + owner.base_pixel_y)
+					if(shift_y >= -maximum_pixel_shift)
 						shift_y--
 						owner.add_offsets(type, y_add = shift_y)
 						is_shifted = TRUE
 				if(WEST)
-					if(shift_x >= -maximum_pixel_shift + owner.base_pixel_x)
+					if(shift_x >= -maximum_pixel_shift)
 						shift_x--
 						owner.add_offsets(type, x_add = shift_x)
 						is_shifted = TRUE

@@ -104,11 +104,6 @@
 
 /obj/machinery/vending/wardrobe/bar_wardrobe
 	skyrat_products = list(
-		/obj/item/storage/fancy/candle_box/vanilla = 1,
-		/obj/item/storage/fancy/candle_box/pear = 1,
-		/obj/item/storage/fancy/candle_box/amber = 1,
-		/obj/item/storage/fancy/candle_box/jasmine = 1,
-		/obj/item/storage/fancy/candle_box/mint = 1,
 		/obj/item/clothing/suit/hooded/wintercoat/skyrat/bartender = 2,
 	)
 
@@ -136,7 +131,7 @@
 		/obj/item/clothing/under/rank/medical/chemist/skyrat/formal/skirt = 2,
 		/obj/item/clothing/under/rank/medical/chemist/skyrat/formal = 2,
 		/obj/item/clothing/under/rank/medical/chemist/skyrat/formal/skirt = 2,
-		/obj/item/clothing/suit/toggle/labcoat/skyrat/pharmacist = 2,
+		/obj/item/clothing/suit/toggle/labcoat/chemist/skyrat/pharmacist = 2,
 		/obj/item/clothing/head/beret/medical/chemist = 2,
 		/obj/item/storage/backpack/messenger/chem = 2,
 	)

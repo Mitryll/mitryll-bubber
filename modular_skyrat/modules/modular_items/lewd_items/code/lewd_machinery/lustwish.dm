@@ -65,6 +65,8 @@
 				/obj/item/clothing/shoes/jackboots/knee = 3,
 
 				/obj/item/clothing/under/misc/latex_catsuit = 8,
+				/obj/item/clothing/suit/corset = 4,
+				/obj/item/clothing/under/misc/latex_halfcatsuit = 8,
 				/obj/item/clothing/gloves/latex_gloves = 8,
 				/obj/item/clothing/shoes/latex_heels = 4,
 				/obj/item/clothing/shoes/latex_socks = 8,
@@ -130,13 +132,22 @@
 				/obj/item/fancy_pillow = 32,
 
 				//chems
-				/obj/item/reagent_containers/pill/crocin = 20,
-				/obj/item/reagent_containers/pill/camphor = 10,
+				/obj/item/reagent_containers/applicator/pill/crocin = 20,
+				/obj/item/reagent_containers/applicator/pill/camphor = 10,
 				/obj/item/reagent_containers/cup/bottle/crocin = 6,
 				/obj/item/reagent_containers/cup/bottle/camphor = 3,
 				/obj/item/reagent_containers/cup/bottle/succubus_milk = 6, //Those are legal 'cause you can just turn off prefs in round in "CLOWN SMOKE MACHINE+PENIS ENLARGEMENT CHEMICAL CASE". Yes, i have special code-phrase for this. I've seen some shit.
 				/obj/item/reagent_containers/cup/bottle/incubus_draft = 6,
 			),
+		),
+		list(
+			"name" = "MOD Suit",
+			"icon" = FA_ICON_USER_ASTRONAUT,
+			"products" = list(
+				/obj/item/mod/construction/plating/lustwish = 5,
+				/obj/item/mod/module/hypno_visor = 5,
+				/obj/item/mod/module/remote_control = 5,
+			)
 		),
 		list(
 			"name" = "Structures",
@@ -148,6 +159,7 @@
 				/obj/item/storage/box/shibari_stand = 4,
 				/obj/item/storage/box/strippole_kit = 4,
 				/obj/item/storage/box/xstand_kit = 4,
+				/obj/item/wallframe/lewd_portal = 8,
 			),
 		),
 	)
@@ -156,6 +168,7 @@
 		/obj/item/clothing/neck/human_petcollar/locked/holo = 3,
 		/obj/item/clothing/neck/size_collar = 8,//It only works in the Interlink anyways
 		/obj/item/toy/plush/cescrewsplush = 1,
+		/obj/item/toy/plush/sinvox = 1,
 		)
 
 	contraband = list(
@@ -166,8 +179,8 @@
 					/obj/item/clothing/neck/human_petcollar/locked = 4,
 					/obj/item/clothing/suit/straight_jacket/kinky_sleepbag = 2, //my favorite thing, spent 1 month on it. Don't remove please.
 					/obj/item/disk/nifsoft_uploader/dorms/contract = 5,
-					/obj/item/reagent_containers/pill/hexacrocin = 10,
-					/obj/item/reagent_containers/pill/pentacamphor = 5,
+					/obj/item/reagent_containers/applicator/pill/hexacrocin = 10,
+					/obj/item/reagent_containers/applicator/pill/pentacamphor = 5,
 					/obj/item/reagent_containers/cup/bottle/hexacrocin = 4,
 					/obj/item/reagent_containers/cup/bottle/pentacamphor = 2)
 
@@ -175,6 +188,7 @@
 	payment_department = ACCOUNT_SRV
 	default_price = PAYCHECK_CREW * 0.6
 	extra_price = PAYCHECK_COMMAND * 2.5
+	allow_custom = TRUE
 
 //Changes the settings on the vendor, if the user uses the discount card.
 /obj/machinery/vending/dorms/attackby(obj/item/used_item, mob/living/user, params)

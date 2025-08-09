@@ -174,7 +174,7 @@
 	//SKYRAT EDIT ADDITION END
 
 /mob/living/silicon/pai/get_status_tab_items()
-	. += ..()
+	. = ..()
 	if(!stat)
 		. += "Emitter Integrity: [holochassis_health * (100 / HOLOCHASSIS_MAX_HEALTH)]."
 	else
@@ -206,6 +206,7 @@
 
 /mob/living/silicon/pai/Initialize(mapload)
 	. = ..()
+	AddComponent(/datum/component/holographic_nature)
 	if(istype(loc, /obj/item/modular_computer))
 		give_messenger_ability()
 	START_PROCESSING(SSfastprocess, src)
@@ -219,7 +220,7 @@
 		pai_card.set_personality(src)
 	card = pai_card
 	forceMove(pai_card)
-	// BUBBER EDIT REMOVAL: PAI Freedom: ORIGINAL: leash = AddComponent(/datum/component/leash, pai_card, HOLOFORM_DEFAULT_RANGE, force_teleport_out_effect = /obj/effect/temp_visual/guardian/phase/out)
+	leash = AddComponent(/datum/component/leash, pai_card, HOLOFORM_DEFAULT_RANGE, force_teleport_out_effect = /obj/effect/temp_visual/guardian/phase/out)
 	addtimer(VARSET_WEAK_CALLBACK(src, holochassis_ready, TRUE), HOLOCHASSIS_INIT_TIME)
 	if(!holoform)
 		add_traits(list(TRAIT_IMMOBILIZED, TRAIT_HANDS_BLOCKED), PAI_FOLDED)
@@ -260,7 +261,12 @@
 	SEND_SIGNAL(src, COMSIG_LIVING_HEALTH_UPDATE)
 
 /mob/living/silicon/pai/update_desc(updates)
-	desc = "A pAI mobile hard-light holographics emitter. This one appears in the form of a [chassis]." // BUBBER EDIT: PAI Freedom: ORIGINAL: desc = "A hard-light holographic avatar representing a pAI. This one appears in the form of a [chassis]."
+// BUBBER EDIT START: PAI ReLeashed: ORIGINAL: desc = "A hard-light holographic avatar representing a pAI. This one appears in the form of a [chassis]."
+	if(!holo_leash)
+		desc = "A pAI mobile hard-light holographics emitter. This one appears in the form of a [chassis]."
+	else
+		desc = "A hard-light holographic avatar representing a pAI. This one appears in the form of a [chassis]."
+// BUBBER EDIT END
 	return ..()
 
 /mob/living/silicon/pai/update_icon_state()
@@ -471,7 +477,7 @@
 
 /// Updates the distance we can be from our pai card
 /mob/living/silicon/pai/proc/increment_range(increment_amount)
-	if(!leash) // BUBBER EDIT: PAI Freedom: ORIGINAL: if(emagged)
+	if(!holo_leash) // BUBBER EDIT: PAI ReLeashed: ORIGINAL: if(emagged)
 		return
 
 	var/new_distance = leash.distance + increment_amount

@@ -22,7 +22,6 @@
 	COMPANY_NAME_DEFOREST_MEDICAL,
 	COMPANY_NAME_NRI_SURPLUS,
 	COMPANY_NAME_BLACKSTEEL_FOUNDATION,
-	COMPANY_NAME_NAKAMURA_ENGINEERING_MODSUITS
 	)
 	pod_type = /obj/structure/closet/supplypod/bluespacepod
 
@@ -80,7 +79,7 @@
 	contraband = TRUE
 
 /obj/machinery/computer/cargo/express/interdyne/tarkon
-	name = "interdyne express supply console"
+	name = "tarkon express supply console"
 	desc = "A standard Tarkon express console."
 	circuit = /obj/item/circuitboard/computer/cargo/express/interdyne/tarkon
 	req_access = list(ACCESS_TARKON)

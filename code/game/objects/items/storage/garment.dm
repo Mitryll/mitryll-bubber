@@ -5,6 +5,7 @@
 	desc = "A bag for storing extra clothes and shoes."
 	slot_flags = NONE
 	resistance_flags = FLAMMABLE
+	storage_type = /datum/storage/bag/garment
 
 /obj/item/storage/bag/garment/captain
 	name = "captain's garment bag"
@@ -37,15 +38,6 @@
 /obj/item/storage/bag/garment/quartermaster
 	name = "quartermasters's garment bag"
 	desc = "A bag for storing extra clothes and shoes. This one belongs to the quartermaster."
-
-/obj/item/storage/bag/garment/Initialize(mapload)
-	. = ..()
-	atom_storage.max_specific_storage = WEIGHT_CLASS_NORMAL
-	atom_storage.numerical_stacking = FALSE
-	atom_storage.max_total_storage = 200
-	atom_storage.max_slots = 15
-	atom_storage.insert_preposition = "in"
-	atom_storage.set_holdable(/obj/item/clothing)
 
 /obj/item/storage/bag/garment/captain/PopulateContents()
 	new /obj/item/clothing/under/rank/captain(src)
@@ -171,7 +163,7 @@
 	new /obj/item/clothing/suit/toggle/labcoat/research_director(src)
 	new	/obj/item/clothing/head/playbunnyears/rd(src)
 	new /obj/item/clothing/under/rank/rnd/research_director/bunnysuit(src)
-	new /obj/item/clothing/suit/jacket/research_director/tailcoat(src)
+	new /obj/item/clothing/suit/toggle/labcoat/research_director/tailcoat(src)
 	new /obj/item/clothing/neck/tie/bunnytie/rd(src)
 
 
@@ -195,7 +187,7 @@
 	new /obj/item/clothing/neck/mantle/cmomantle(src)
 	new /obj/item/clothing/head/playbunnyears/cmo(src)
 	new /obj/item/clothing/under/rank/medical/cmo_bunnysuit(src)
-	new /obj/item/clothing/suit/toggle/labcoat/doctor_tailcoat/cmo(src)
+	new /obj/item/clothing/suit/toggle/labcoat/cmo/doctor_tailcoat(src)
 	new /obj/item/clothing/neck/tie/bunnytie/cmo(src)
 
 /obj/item/storage/bag/garment/engineering_chief/PopulateContents()

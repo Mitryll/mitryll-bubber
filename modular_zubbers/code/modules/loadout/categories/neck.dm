@@ -70,3 +70,11 @@
 	name = "Detective's Holobadge"
 	item_path = /obj/item/clothing/accessory/badge/holo/detective
 	restricted_roles = list(JOB_DETECTIVE)
+
+/datum/loadout_item/neck/warrior_cape_worn
+	name = "tattered cloak"
+	item_path = /obj/item/clothing/neck/warrior_cape/loadout
+
+/datum/loadout_item/neck/scarf/shadekin
+	name = "Shadekin Fur Scarf"
+	item_path = /obj/item/clothing/neck/scarf/shadekin
